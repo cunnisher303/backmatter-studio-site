@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -75,6 +76,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <main className="flex-1">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
