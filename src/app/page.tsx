@@ -65,6 +65,25 @@ const faqs = [
   },
 ];
 
+const protections = [
+  {
+    title: "See it before you pay in full",
+    body: "You get a live preview link on day 3. The second half of the price isn't due until launch — so you approve the real, finished site before you pay the balance. No paying for something sight-unseen.",
+  },
+  {
+    title: "You own everything, day one",
+    body: "Your code, domain, email list, and Discord — all under your accounts. No hosting hostage fees, no monthly lock-in. If we ever part ways, you keep all of it.",
+  },
+  {
+    title: "Fixed scope, in writing",
+    body: "Exactly what's included, the price, and the timeline are agreed up front. One consolidated revision round to get it right. No moving goalposts, no surprise invoices.",
+  },
+  {
+    title: "An honest review, not a forced rave",
+    body: "Founding clients trade a candid testimonial for the rate — good or bad. I want the truth, because the next author considering this is going to read it.",
+  },
+];
+
 export default function Home() {
   return (
     <div>
@@ -134,6 +153,43 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Proof — the portfolio */}
+      <section className="px-6 py-20 border-t border-gold/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="font-display text-gold tracking-[0.3em] text-xs uppercase mb-3">See it in the wild</div>
+          <h2 className="font-display text-2xl md:text-3xl text-bone flourish">I BUILT THIS FOR MY OWN BOOKS FIRST</h2>
+          <p className="serif italic text-bone/80 text-lg mt-8 max-w-2xl mx-auto leading-relaxed">
+            Before I built reader funnels for anyone else, I built one for my own dark-fantasy series —
+            website, email capture, link hub, Discord, and lore pages. It&apos;s live right now. Go click
+            every button. That&apos;s the exact system I&apos;ll build for your books.
+          </p>
+
+          <a href={PORTFOLIO} target="_blank" rel="noreferrer" className="block mt-12 group">
+            <div className="card rounded-md overflow-hidden max-w-3xl mx-auto">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-gold/15 bg-black/50">
+                <span className="h-3 w-3 rounded-full bg-blood/70"></span>
+                <span className="h-3 w-3 rounded-full bg-gold/50"></span>
+                <span className="h-3 w-3 rounded-full bg-bone/30"></span>
+                <span className="ml-3 text-xs text-muted tracking-wide">darktrinitychronicles.com</span>
+                <span className="ml-auto text-[10px] font-display tracking-widest text-gold-bright border border-gold/40 rounded-sm px-2 py-0.5">LIVE</span>
+              </div>
+              <div className="p-8 md:p-12">
+                <div className="font-display text-gold tracking-[0.3em] text-[10px] uppercase mb-2">The Dark Trinity Chronicles</div>
+                <div className="font-display text-bone text-xl md:text-2xl">A fallen world. Three powers. A child of light and dark.</div>
+                <div className="flex justify-center gap-4 mt-8">
+                  {["act-1", "act-2", "act-3"].map((c) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img key={c} src={`/covers/${c}.webp`} alt="Dark Trinity Chronicles book cover" className="w-20 md:w-28 rounded-sm shadow-lg shadow-black/60 group-hover:scale-105 transition-transform duration-500" />
+                  ))}
+                </div>
+                <div className="mt-8 font-display tracking-widest text-xs text-gold-bright">EXPLORE THE LIVE SITE →</div>
+              </div>
+            </div>
+          </a>
+          <p className="serif italic text-muted mt-6">— Pendrake Mallory, founder (and yes, the author of those books)</p>
         </div>
       </section>
 
@@ -213,6 +269,25 @@ export default function Home() {
           <p className="text-center text-muted text-xs mt-10 tracking-wide">
             50% deposit to start · balance at launch · no hourly, ever
           </p>
+        </div>
+      </section>
+
+      {/* Risk reversal */}
+      <section className="px-6 py-20 border-t border-gold/10">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="font-display text-gold tracking-[0.3em] text-xs uppercase mb-3">No leap of faith</div>
+          <h2 className="font-display text-2xl md:text-3xl text-bone flourish">HOW YOU&apos;RE PROTECTED</h2>
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-14 text-left">
+            {protections.map((p) => (
+              <div key={p.title} className="flex gap-3">
+                <span className="text-gold-bright font-display text-lg leading-none mt-1">✓</span>
+                <div>
+                  <h3 className="font-display text-bone tracking-wider text-sm">{p.title}</h3>
+                  <p className="serif text-bone/75 mt-1 leading-relaxed">{p.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
